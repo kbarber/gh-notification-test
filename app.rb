@@ -11,6 +11,15 @@ post '/github' do
   rescue
     payload = params
   end
-  puts payload.pretty_inspect
+
+  puts <<-EOS
+Payload
+-------
+
+#{payload.pretty_inspect}
+
+Token: #{params[:token]}
+  EOS
+
   201
 end
